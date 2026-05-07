@@ -1,0 +1,44 @@
+<nav>
+  <a routerLink="/" class="logo">
+    <div class="logo-img-wrapper">
+      <img src="https://res.cloudinary.com/dcno88ooa/image/upload/q_auto/f_auto/v1775226034/LOGO-acc_dmr8xp.png" class="logo-img" alt="Logo Congo Metaverse">
+    </div>
+    <div class="logo-texts">
+      <span class="logo-text">CONGO</span>
+      <span class="logo-sub">METAVERSE</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">ACCUEIL</a></li>
+    <li><a routerLink="/histoire" routerLinkActive="active">Histoire du Congo</a></li>
+    <li class="dropdown" [class.active-menu]="patrimoineOpen">
+      <a href="#" (click)="togglePatrimoine($event)">
+        Patrimoine <i class="fa-solid fa-chevron-down" style="font-size:0.45rem;margin-left:5px;"></i>
+      </a>
+      <ul class="submenu">
+        <li><a routerLink="/patrimoine" routerLinkActive="active">Patrimoine Touristique</a></li>
+        <li><a routerLink="/tourisme" routerLinkActive="active">Patrimoine Culturel</a></li>
+      </ul>
+    </li>
+    <li><a routerLink="/marche-art" routerLinkActive="active">Marché d'Art</a></li>
+    <li><a routerLink="/actualites" routerLinkActive="active">Actualités</a></li>
+    <li><a routerLink="/a-propos" routerLinkActive="active">À propos</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a routerLink="/paiement" class="btn-premium">
+      <i class="fa-solid fa-star"></i> Premium
+    </a>
+    <a routerLink="/inscription" class="nav-auth">
+      <i class="fa-solid fa-circle-user"></i> Connexion
+    </a>
+    <div class="nav-icons">
+      <button class="nav-icon-btn" aria-label="Recherche">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>

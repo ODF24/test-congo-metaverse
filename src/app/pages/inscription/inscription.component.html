@@ -1,0 +1,38 @@
+<div class="login-container">
+  <form class="login-form" (ngSubmit)="onSubmit()">
+    <div class="form-logo">
+      <img src="assets/logo/LOGO-acc.png" alt="Logo"
+        onerror="this.src='https://res.cloudinary.com/dcno88ooa/image/upload/q_auto/f_auto/v1775226034/LOGO-acc_dmr8xp.png'"/>
+    </div>
+    <h2>Bienvenue à Congo Metaverse</h2>
+    <p>Connectez-vous pour continuer</p>
+
+    <div *ngIf="error" class="error-msg"><i class="fas fa-exclamation-circle"></i> {{ error }}</div>
+
+    <div class="input-group">
+      <input type="email" id="email" [(ngModel)]="email" name="email" required placeholder=" "/>
+      <label for="email">Email</label>
+      <i class="fas fa-envelope"></i>
+    </div>
+
+    <div class="input-group">
+      <input type="password" id="password" [(ngModel)]="password" name="password" required placeholder=" "/>
+      <label for="password">Mot de passe</label>
+      <i class="fas fa-lock"></i>
+    </div>
+
+    <button type="submit" class="btn-login" [disabled]="loading">
+      <span *ngIf="loading"><i class="fas fa-spinner fa-spin"></i> Connexion...</span>
+      <span *ngIf="!loading">Se connecter</span>
+    </button>
+
+    <div class="divider"><span>ou se connecter avec</span></div>
+    <div class="social-login">
+      <a href="#" class="social-icon google"><i class="fab fa-google"></i></a>
+      <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon github"><i class="fab fa-github"></i></a>
+    </div>
+
+    <p class="signup-link">Pas encore de compte ? <a routerLink="/signup">S'inscrire</a></p>
+  </form>
+</div>

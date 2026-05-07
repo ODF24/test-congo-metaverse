@@ -1,0 +1,50 @@
+<section class="batisseur-detail" id="detail">
+  <div class="back-container fade-up">
+    <a routerLink="/histoire" class="btn-back">
+      <i class="fa-solid fa-arrow-left"></i> Retour aux bâtisseurs
+    </a>
+  </div>
+
+  <div class="header-maquette fade-up">
+    <h1>Les Bâtisseurs de la Nation</h1>
+    <p class="subtitle">Découvrez les figures historiques qui ont façonné la République du Congo</p>
+  </div>
+
+  <div *ngIf="president; else notFound" class="detail-grid">
+    <div class="detail-video-wrap fade-up">
+      <div class="video-container">
+        <img [src]="president.img" [alt]="president.nom" class="detail-main-img"/>
+        <div class="video-overlay-shadow"></div>
+      </div>
+    </div>
+    <div class="detail-sidebar fade-up">
+      <div class="profile-card">
+        <div class="portrait-img-box">
+          <img [src]="president.img" [alt]="president.nom"/>
+        </div>
+        <div class="ethnic-decor">
+          <img src="https://res.cloudinary.com/dcno88ooa/image/upload/q_auto/f_auto/v1775226034/LOGO-acc_dmr8xp.png" class="logo-img" alt="Logo"/>
+        </div>
+      </div>
+      <div class="about-content">
+        <h3>À Propos</h3>
+        <p class="main-bio">{{ president.bio }}</p>
+        <div class="info-list">
+          <p><span>Date/Lieu de naissance :</span> {{ president.naissance }}</p>
+          <p><span>Date/Lieu de décès :</span> {{ president.deces }}</p>
+          <p><span>Fonctions précédentes :</span> {{ president.fonctions }}</p>
+          <p><span>Mandat présidentiel :</span> {{ president.mandat }}</p>
+          <p><span>Parti :</span> {{ president.parti }}</p>
+          <p *ngIf="president.conjoint"><span>Époux(se) :</span> {{ president.conjoint }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #notFound>
+    <div class="not-found">
+      <p>Président introuvable.</p>
+      <a routerLink="/histoire" class="btn-back">Retour à l'histoire</a>
+    </div>
+  </ng-template>
+</section>

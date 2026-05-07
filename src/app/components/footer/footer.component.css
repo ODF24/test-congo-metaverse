@@ -1,0 +1,15 @@
+footer {
+  background: #050a07;
+  border-top: 1px solid rgba(200,150,42,0.15);
+  padding: 48px 8%;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+.footer-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem; letter-spacing: 4px;
+  color: #C9960C; margin-bottom: 20px;
+}
+.footer-nav { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 20px; }
+.footer-nav a { color: rgba(245,237,216,0.5); font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; transition: color 0.3s; }
+.footer-nav a:hover { color: #C9960C; }
+.footer-copy { font-size: 0.75rem; color: #5a5040; letter-spacing: 1px; }

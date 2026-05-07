@@ -1,0 +1,53 @@
+:host { display: block; padding-top: 80px; background: #0a0a0a; min-height: 100vh; }
+
+.batisseur-detail {
+  padding: 60px 8% 100px;
+  background: linear-gradient(rgba(10,12,8,0.92),rgba(10,12,8,0.92)),
+    url('https://res.cloudinary.com/dcno88ooa/image/upload/q_auto/f_auto/v1776360954/Image_2.jpg_1_a0atn0.jpg') center/cover no-repeat;
+}
+.back-container { margin-bottom: 30px; }
+.btn-back {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px; border: 1px solid rgba(200,151,58,0.4);
+  border-radius: 8px; color: #C9960C; font-size: 0.8rem;
+  text-decoration: none; transition: .3s;
+}
+.btn-back:hover { background: rgba(200,151,58,0.1); }
+
+.header-maquette { text-align: center; margin-bottom: 60px; }
+.header-maquette h1 { font-family: 'Cinzel',serif; font-size: clamp(1.8rem,3vw,2.8rem); color: #fff; margin-bottom: 10px; }
+.subtitle { color: #a09070; font-size: 0.9rem; }
+
+.detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+
+.video-container { position: relative; border-radius: 16px; overflow: hidden; }
+.detail-main-img { width: 100%; height: auto; display: block; }
+.video-overlay-shadow {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,12,8,0.7) 0%, transparent 50%);
+}
+
+.profile-card {
+  display: flex; flex-direction: column; align-items: center;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(200,151,58,0.2);
+  border-radius: 16px; padding: 24px; margin-bottom: 24px;
+}
+.portrait-img-box { width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 3px solid #C9960C; margin-bottom: 16px; }
+.portrait-img-box img { width: 100%; height: 100%; object-fit: cover; }
+.ethnic-decor { display: flex; justify-content: center; }
+.logo-img { width: 60px; height: 60px; object-fit: contain; opacity: 0.7; }
+
+.about-content { background: rgba(255,255,255,0.03); border: 1px solid rgba(200,151,58,0.15); border-radius: 16px; padding: 24px; }
+.about-content h3 { font-family: 'Cinzel',serif; font-size: 1.1rem; color: #C9960C; margin-bottom: 12px; }
+.main-bio { font-size: 0.9rem; color: #e8dfc8; line-height: 1.7; margin-bottom: 20px; }
+.info-list p { font-size: 0.82rem; color: #a09070; margin-bottom: 8px; line-height: 1.5; }
+.info-list span { color: #C9960C; font-weight: 600; }
+
+.not-found { text-align: center; padding: 80px; color: #a09070; }
+
+.fade-up { opacity: 0; transform: translateY(30px); animation: fadeUp .8s ease forwards; }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 768px) {
+  .detail-grid { grid-template-columns: 1fr; }
+}

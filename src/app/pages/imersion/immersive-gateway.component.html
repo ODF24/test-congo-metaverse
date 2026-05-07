@@ -1,0 +1,89 @@
+<div class="immersion-root">
+
+  <!-- SCÈNES -->
+  <div class="scenes-wrap" *ngIf="!completed">
+    <div
+      *ngFor="let scene of scenes; let i = index"
+      class="scene"
+      [class.active]="i === currentScene"
+      [class.leaving]="transitioning && i === currentScene"
+    >
+      <div class="scene-bg" [style.background-image]="'url(' + scene.img + ')'"></div>
+      <div class="scene-overlay"></div>
+      <div class="scene-vignette"></div>
+    </div>
+
+    <!-- HUD -->
+    <div class="hud">
+      <div class="hud-logo">
+        <img src="assets/logo/LOGO-acc.png" alt="Logo"
+          onerror="this.src='https://res.cloudinary.com/dcno88ooa/image/upload/q_auto/f_auto/v1775226034/LOGO-acc_dmr8xp.png'"/>
+        <span>CONGO METAVERSE</span>
+      </div>
+      <div class="step-label">Étape 3 sur 3</div>
+    </div>
+
+    <!-- Contenu scène -->
+    <div class="scene-content" [class.hidden]="transitioning">
+      <div class="scene-icon">{{ scenes[currentScene].icon }}</div>
+      <h2 class="scene-title">{{ scenes[currentScene].title }}</h2>
+      <p class="scene-text">{{ scenes[currentScene].text }}</p>
+    </div>
+
+    <!-- Contrôles -->
+    <div class="controls">
+      <button class="ctrl-btn prev" (click)="prevScene()" [disabled]="currentScene === 0">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+
+      <div class="dots">
+        <button
+          *ngFor="let s of scenes; let i = index"
+          class="dot"
+          [class.active]="i === currentScene"
+          (click)="goToScene(i)"
+        ></button>
+      </div>
+
+      <button class="ctrl-btn next" (click)="nextScene()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Barre de progression -->
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="progress"></div>
+    </div>
+
+    <!-- Compteur scènes -->
+    <div class="scene-counter">
+      {{ currentScene + 1 }} / {{ scenes.length }}
+    </div>
+  </div>
+
+  <!-- ÉCRAN FINAL -->
+  <div class="final-screen" *ngIf="completed">
+    <div class="final-bg"></div>
+    <div class="final-overlay"></div>
+    <div class="final-content">
+      <div class="final-logo">
+        <img src="assets/logo/LOGO 1.png" alt="Logo"
+          onerror="this.src='https://res.cloudinary.com/dcno88ooa/image/upload/q_auto/f_auto/v1775226034/LOGO_1_je4iws.png'"/>
+      </div>
+      <div class="final-badge">✅ Immersion complète</div>
+      <h1>Vous êtes prêt(e) !</h1>
+      <p>Bienvenue dans le Congo Metaverse.<br/>Votre aventure commence maintenant.</p>
+      <button class="btn-enter-site" (click)="enterSite()">
+        Accéder au site
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+</div>

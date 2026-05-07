@@ -1,0 +1,47 @@
+<div class="signup-wrapper">
+  <form class="login-form" (ngSubmit)="onSubmit()">
+    <div class="form-logo">
+      <img src="assets/logo/LOGO-acc.png" alt="Logo"
+        onerror="this.src='https://res.cloudinary.com/dcno88ooa/image/upload/q_auto/f_auto/v1775226034/LOGO-acc_dmr8xp.png'"/>
+    </div>
+    <h2>Rejoindre Congo Metaverse</h2>
+    <p>Créez votre compte pour commencer l'immersion</p>
+
+    <div *ngIf="error" class="error-msg"><i class="fas fa-exclamation-circle"></i> {{ error }}</div>
+    <div *ngIf="success" class="success-msg"><i class="fas fa-check-circle"></i> {{ success }}</div>
+
+    <div class="input-group">
+      <input type="text" id="fullname" [(ngModel)]="fullname" name="fullname" required placeholder=" "/>
+      <label for="fullname">Nom complet</label>
+      <i class="fas fa-user"></i>
+    </div>
+    <div class="input-group">
+      <input type="email" id="email" [(ngModel)]="email" name="email" required placeholder=" "/>
+      <label for="email">Email</label>
+      <i class="fas fa-envelope"></i>
+    </div>
+    <div class="input-group">
+      <input type="password" id="password" [(ngModel)]="password" name="password" required placeholder=" "/>
+      <label for="password">Mot de passe</label>
+      <i class="fas fa-lock"></i>
+    </div>
+    <div class="input-group">
+      <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required placeholder=" "/>
+      <label for="confirmPassword">Confirmer le mot de passe</label>
+      <i class="fas fa-check-double"></i>
+    </div>
+
+    <button type="submit" class="btn-login" [disabled]="loading">
+      <span *ngIf="loading"><i class="fas fa-spinner fa-spin"></i> Création du compte...</span>
+      <span *ngIf="!loading">S'inscrire &amp; Commencer l'immersion</span>
+    </button>
+
+    <div class="divider"><span>ou s'inscrire avec</span></div>
+    <div class="social-login">
+      <a href="#" class="social-icon google"><i class="fab fa-google"></i></a>
+      <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon github"><i class="fab fa-github"></i></a>
+    </div>
+    <p class="signup-link">Déjà un compte ? <a routerLink="/inscription">Se connecter</a></p>
+  </form>
+</div>
